@@ -75,7 +75,7 @@ procedure mejoresPelis(var v:vecMejores; vP:vector);
 		while (l<>nil) do begin
 			if(l^.elem.puntaje>mejor)then begin
 				mejor:=l^.elem.puntaje;
-				writeln(mejor:2:2);
+				//writeln(mejor:2:2);
 			end;
 			l:=l^.sig;
 		end;
@@ -136,13 +136,13 @@ end;
 var
 	v:vector;
 	vM:vecMejores;
-	i:integer;
+	//i:integer;
 begin
 	cargarPelis(v);
 	mejoresPelis(vM,v);
 	ordenarMejores(vM);
-	for i:=1 to tope1 do begin
+	{for i:=1 to tope1 do begin
 		writeln(vM[i]:2:2);
-	end;
+	end;}
 	mostrarMejores(vM);
 end.
