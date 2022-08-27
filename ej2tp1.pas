@@ -40,6 +40,7 @@ procedure cargarVector(var v:oficinasArr; var dL:integer);
 var
 	ofis: oficina;
 begin
+	dL:=0;
 	leerOficina(ofis);
 	while(ofis.codigo <> -1)and(dL<tope) do begin
 		dL:=dL+1;
