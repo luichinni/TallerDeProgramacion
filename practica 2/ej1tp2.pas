@@ -117,6 +117,7 @@ begin
 	impVecRecursivo(v,dL); // C
 	contarCaracteres(cant); // D
 	writeln('caracteres leidos: ',cant);
+	l:=nil;
 	leerCaracteresLista(l); // E
 	impLista(l); // F
 	impListaInv(l); // G
