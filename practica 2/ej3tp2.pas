@@ -26,9 +26,9 @@ var
 	n:integer;
 begin
 	n:=random(99);
-	if(n<>0)then begin // genLista->addFront = lista ordenada como agregar atras
-		generarLista(l); // addFront->genLista = lista ordenada como agregar adelante
+	if(n<>0)then begin
 		addFront(l,n);
+		generarLista(l); // addFront->genLista = lista ordenada como agregar adelante
 		writeln('[',n,']');
 	end;
 end;

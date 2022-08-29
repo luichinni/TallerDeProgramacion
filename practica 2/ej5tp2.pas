@@ -26,33 +26,22 @@ var
 	medio:indice;
 begin
 	//writeln(fin,'-',ini,': ',(fin-ini));
-	if((fin-ini)>2)then begin
-		if(ini<>1)then
-			medio:=(fin DIV 2)+(ini DIV 2)
-		else
-			medio:=fin DIV 2;
+	if(fin>ini)then begin
+		medio:=(fin+ini DIV 2);
 		
 		//writeln(medio);
 		//readln;
 			
 		if(dato<>v[medio])then begin
 			if(dato<v[medio])then
-				busquedaDicotomica(v,ini,medio,dato,pos)
+				busquedaDicotomica(v,ini,medio-1,dato,pos)
 			else
-				busquedaDicotomica(v,medio,fin,dato,pos);
+				busquedaDicotomica(v,medio+1,fin,dato,pos);
 		end else begin
 			pos:=medio;
 		end;
 	end else begin
-		// casos base extra
-		if(v[ini]=dato)then
-			pos:=ini
-		else if (v[fin]=dato)then
-			pos:=fin
-		else if (v[ini+1]=dato)then
-			pos:=ini+1
-		else
-			pos:=-1;
+		pos:=-1;
 	end;
 		
 end;
@@ -64,7 +53,7 @@ var
 begin
 	i:=1;
 	genVector(v,i,dF);
-	dato:=v[4];
+	dato:=25;
 	busquedaDicotomica(v,1,dF,dato,pos);
 	writeln('Pos de ',dato,' en vector: ',pos);
 end.

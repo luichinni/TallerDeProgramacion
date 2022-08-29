@@ -27,13 +27,11 @@ procedure leerCaracteres(var v:vec10; var dL:integer);
 var
 	c:char;
 begin
-	if(dL<10)then begin
-		readln(c);
+	read(c);
+	if(dL<dimF)and(c<>'.')then begin
 		dL:=dL+1;
 		v[dL]:=c; // el punto tambien se guarda ?
-		if(c<>'.')then begin
-			leerCaracteres(v,dL);
-		end;
+		leerCaracteres(v,dL);
 	end;
 end;
 //----------------------------------------------------------------------
@@ -50,9 +48,8 @@ end;
 procedure impVecRecursivo(v:vec10;dL:integer);
 begin
 	if(dL>0)then begin
+		impVecRecursivo(v,dL-1);
 		writeln('[',dL,']: ',v[dL]);
-		dL:=dL-1;
-		impVecRecursivo(v,dL);
 	end;
 end;
 //----------------------------------------------------------------------
@@ -61,9 +58,9 @@ procedure contarCaracteres(var cant:integer);
 var
 	c:char;
 begin
-	readln(c);
-	cant:=cant+1; // el punto tambien se cuenta ?
+	read(c);
 	if(c<>'.')then begin
+		cant:=cant+1; // el punto tambien se cuenta ?
 		contarCaracteres(cant);
 	end;
 end;
@@ -81,9 +78,9 @@ procedure leerCaracteresLista(var l:lista);
 var
 	c:char;
 begin
-	readln(c);
-	agregarAdelante(l,c); // el punto tambien se guarda ?
+	read(c);
 	if(c<>'.')then begin
+		agregarAdelante(l,c); // el punto tambien se guarda ?
 		leerCaracteresLista(l);
 	end;
 end;
